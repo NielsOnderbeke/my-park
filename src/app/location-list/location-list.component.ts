@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { ParkingData } from "../api-data.service";
 
 @Component({
 	selector: "app-location-list",
@@ -6,5 +7,11 @@ import { Component, Input } from "@angular/core";
 	styleUrls: ["./location-list.component.scss"],
 })
 export class LocationListComponent {
-	@Input() data: any;
+	@Input() data: ParkingData | undefined;
+
+	parkZoneColors = new Map([
+		["Oranje zone", "orange"],
+		["Gele zone", "gold"],
+		["Rode zone", "yellow"],
+	]);
 }

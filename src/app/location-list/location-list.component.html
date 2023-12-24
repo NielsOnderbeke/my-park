@@ -1,8 +1,12 @@
-<section class="max-w-xl mx-auto p-4">
+<section class="max-w-xl mx-auto p-4 overflow-auto">
 	// todo add filters
-	<ul *ngIf="data.results" class="grid gap-2">
-		<li class="p-2 border-white border-solid border rounded-md" *ngFor="let item of data.results">
-			{{ item | json }}
+	<ul *ngIf="data && !!data.results.length" class="grid gap-2">
+		<li class="p-2 border-white border-solid border rounded-md flex gap-2" *ngFor="let item of data.results">
+			<span
+				class="w-6 h-6 border border-white border-solid block"
+				[ngStyle]="{ backgroundColor: parkZoneColors.get(item.parkeertariefzone) }"
+			></span>
+			<h1>{{ item.straat }} {{ item.huisnr }}</h1>
 		</li>
 	</ul>
 </section>

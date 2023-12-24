@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ApiDataService } from "./api-data.service";
+import { ApiDataService, ParkingData } from "./api-data.service";
 
 @Component({
 	selector: "app-root",
@@ -9,7 +9,7 @@ import { ApiDataService } from "./api-data.service";
 export class AppComponent implements OnInit {
 	title = "my-park";
 
-	data: any;
+	data: ParkingData | undefined;
 
 	constructor(private dataService: ApiDataService) {}
 

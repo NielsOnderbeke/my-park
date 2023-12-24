@@ -2,6 +2,37 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
+export interface ParkingData {
+	total_count: number;
+	results: Array<{
+		geometry: {
+			type: string;
+			geometry: {
+				coordinates: [number, number];
+				type: string;
+			};
+			properties: {};
+		};
+		urid: string;
+		parkeertariefzone: string;
+		bewonerszone: string;
+		panr: number;
+		betaalmodus: string;
+		status: string;
+		categorie: string;
+		gexxxx: string;
+		straat: string;
+		huisnr: string;
+		betrokkenadressen: string;
+		bronid: string;
+		timestampbron: string;
+		geo_point_2d: {
+			lon: number;
+			lat: number;
+		};
+	}>;
+}
+
 @Injectable({
 	providedIn: "root",
 })
@@ -11,7 +42,7 @@ export class ApiDataService {
 
 	constructor(private http: HttpClient) {}
 
-	getData(): Observable<any> {
-		return this.http.get(this.apiUrl);
+	getData(): Observable<ParkingData> {
+		return this.http.get(this.apiUrl) as Observable<ParkingData>;
 	}
 }
