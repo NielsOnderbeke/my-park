@@ -7,10 +7,17 @@ import { MapViewComponent } from "./map-view/map-view.component";
 import { LocationListComponent } from "./location-list/location-list.component";
 
 import { HttpClientModule } from "@angular/common/http";
+import { NgIconsModule } from "@ng-icons/core";
+import { bootstrapChevronCompactRight } from "@ng-icons/bootstrap-icons";
 
 @NgModule({
 	declarations: [AppComponent, MapViewComponent, LocationListComponent],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		NgIconsModule.withIcons({ bootstrapChevronCompactRight }),
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })

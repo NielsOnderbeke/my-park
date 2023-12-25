@@ -30,6 +30,7 @@ export interface ParkingData {
 			lon: number;
 			lat: number;
 		};
+		haversine?: number;
 	}>;
 }
 
@@ -38,7 +39,7 @@ export interface ParkingData {
 })
 export class ApiDataService {
 	private apiUrl =
-		"https://data.stad.gent/api/explore/v2.1/catalog/datasets/locaties-parkeerautomaten-gent/records?limit=20";
+		"https://data.stad.gent/api/explore/v2.1/catalog/datasets/locaties-parkeerautomaten-gent/records?limit=50";
 
 	constructor(private http: HttpClient) {}
 
