@@ -1,5 +1,8 @@
-<section class="max-w-xl mx-auto p-4">
+<section class="max-w-xl mx-auto pt-4 px-4">
 	<mat-chip-listbox aria-label="Zone selection">
-		<mat-chip-option *ngFor="let zone of parkingZones">{{ zone }}</mat-chip-option>
+		<mat-chip-option *ngFor="let zone of parkingZones">
+			<ng-icon name="bootstrapMapFill" [color]="parkZoneColors.get(zone)" matChipAvatar></ng-icon>
+			{{ zone }}</mat-chip-option
+		>
 	</mat-chip-listbox>
 </section>

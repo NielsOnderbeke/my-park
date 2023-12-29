@@ -45,11 +45,22 @@ export interface ParkingData {
 	}>;
 }
 
+const parkZoneColors = new Map<ParkingZone, string>([
+	["Oranje zone", "#ea580c"],
+	["Groene zone", "#059669"],
+	["Gele zone", "#f59e0b"],
+	["Groene zone uitbreiding", "#059669"],
+	["Blauwe zone", "blue"],
+	["Blauwe zone speciaal", "blue"],
+	["Rode zone", "#b91c1c"],
+]);
+
 @Injectable({
 	providedIn: "root",
 })
 export class ApiDataService {
 	public readonly parkingZones = parkingZones;
+	public readonly parkZoneColors = parkZoneColors;
 
 	private apiUrl =
 		"https://data.stad.gent/api/explore/v2.1/catalog/datasets/locaties-parkeerautomaten-gent/records?limit=50";
