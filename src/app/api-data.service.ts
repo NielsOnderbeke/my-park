@@ -49,6 +49,8 @@ export interface ParkingData {
 	providedIn: "root",
 })
 export class ApiDataService {
+	public readonly parkingZones = parkingZones;
+
 	private apiUrl =
 		"https://data.stad.gent/api/explore/v2.1/catalog/datasets/locaties-parkeerautomaten-gent/records?limit=50";
 

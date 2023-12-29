@@ -9,16 +9,20 @@ import { LocationListComponent } from "./location-list/location-list.component";
 import { HttpClientModule } from "@angular/common/http";
 import { NgIconsModule } from "@ng-icons/core";
 import { bootstrapChevronCompactRight } from "@ng-icons/bootstrap-icons";
+import { LocationFiltersComponent } from "./location-filters/location-filters.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
 	declarations: [AppComponent, MapViewComponent, LocationListComponent],
+	providers: [],
+	bootstrap: [AppComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
 		NgIconsModule.withIcons({ bootstrapChevronCompactRight }),
+		BrowserAnimationsModule,
+		LocationFiltersComponent,
 	],
-	providers: [],
-	bootstrap: [AppComponent],
 })
 export class AppModule {}
