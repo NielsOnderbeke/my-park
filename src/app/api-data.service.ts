@@ -2,6 +2,17 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
+const parkingZones = [
+	"Oranje zone",
+	"Groene zone",
+	"Gele zone",
+	"Rode zone",
+	"Blauwe zone",
+	"Blauwe zone speciaal",
+	"Groene zone uitbreiding",
+] as const;
+export type ParkingZone = (typeof parkingZones)[number];
+
 export interface ParkingData {
 	total_count: number;
 	results: Array<{
@@ -14,7 +25,7 @@ export interface ParkingData {
 			properties: {};
 		};
 		urid: string;
-		parkeertariefzone: string;
+		parkeertariefzone: ParkingZone;
 		bewonerszone: string;
 		panr: number;
 		betaalmodus: string;
